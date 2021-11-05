@@ -1,0 +1,100 @@
+
+.button-6 {
+  align-items: center;
+  background-color: #6f00ff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.342) 0 4px 6px;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 4%;
+  padding-left: 10%;
+  min-height: 3rem;
+  padding-left: 5%;
+  padding-right: 5%;
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button-6:hover,
+.button-6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button-6:hover {
+  transform: translateY(-1px);
+}
+
+.button-6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+
+.container {
+    width: 70%;
+}
+
+body {
+  background-color: #032e42;
+  background-image: url(img2/casino.png);
+  
+}
+
+.jumbotron {
+    background-color: #0a1417;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.329);
+  
+}
+
+#nadpis {
+  color: rgb(255, 251, 0);
+}
+
+#pozadi {
+    min-height: 600px;
+    margin-left: 30px;
+    box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.329);
+    background-color: #9cacbf linear;
+}
+
+#vysledek {
+    text-align: center;
+    font-size: 30px;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding: 20px;
+    background-color: #0a1417;
+    color: rgb(255, 251, 0);
+}
+
+#result {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 20px;
+    
+}
+
+#cube {
+    border: 3px solid rgb(0, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.342) 0 4px 10px;
+    border-radius: 1rem;
+    width: 20%;
+    filter: invert();
+}

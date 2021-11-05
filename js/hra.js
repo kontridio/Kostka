@@ -1,13 +1,37 @@
 const cube = document.getElementById('cube');
-const play = document.getElementById('play');
+const mixBut = document.getElementById('play');
 const result = document.getElementById('result');
 
 let hod = 0;
 let hody = [];
+let timer = false;
 
-play.addEventListener('click', ()=>{
+
+function animace() {
     hod = (Math.ceil(Math.random() * 6));
     cube.src = `img/kostka${hod}.png`;
+}
+
+play.addEventListener('click', () => {
+
+    if (!timer) {
+        timer = setInterval(animace, 55);
+        play.innerHTML = 'STOP';
+    } else {
+        clearInterval(timer);
+        timer = false;
+        play.innerHTML = 'HOD';
+        hody.push(hod);
+        console.log(hody);
+        statistika();
+        min();
+        max();
+    }
+
+})
+
+end.addEventListener('click', () => {
+
     hody.push(hod);
     console.log(hody);
     statistika();
@@ -15,10 +39,46 @@ play.addEventListener('click', ()=>{
     max();
 })
 
+
+
+
+/*
+mixBut.addEventListener("click", Start);
+
+function Start() {
+    hod = (Math.ceil(Math.random() * 6));
+    console.log("Started");
+    mixBut.removeEventListener("click", Start);
+    if (!timer) {
+        timer = setInterval(animace, 50);
+    } else {
+        clearInterval(timer);
+        timer = false;
+        stop();
+    }
+
+    mixBut.addEventListener("click", Stop);
+    mixBut.value = "Stop";
+}
+*/
+
+function Stop() {
+    cube.src = `img/kostka${hod}.png`;
+    hody.push(hod);
+    console.log(hody);
+    statistika();
+    min();
+    max();
+    console.log("Stopped");
+    mixBut.removeEventListener("click", Stop);
+    mixBut.addEventListener("click", Start);
+    mixBut.value = "Start";
+}
+
 function suma() {
     let vysledek = 0;
     hody.forEach((value) => {
-        vysledek +=  value;
+        vysledek += value;
     });
     return vysledek;
 }
@@ -44,7 +104,7 @@ function statistika() {
     result.innerHTML = `<p class="alert alert-info">Aktuální hod: ${hod}</p>`;
     result.innerHTML += `<p class="alert alert-info">Všechny hody: ${hody}</p>`;
     result.innerHTML += `<p class="alert alert-info">Součet hodů: ${suma()}</p>`;
-    result.innerHTML += `<p class="alert alert-info">Průměr hodů: ${(suma()/hody.length).toFixed(2)}</p>`;
+    result.innerHTML += `<p class="alert alert-info">Průměr hodů: ${(suma() / hody.length).toFixed(2)}</p>`;
     result.innerHTML += `<p class="alert alert-info">Minimální hod: ${min()}</p>`;
     result.innerHTML += `<p class="alert alert-info">Maximální hod: ${max()}</p>`;
 }
